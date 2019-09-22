@@ -128,12 +128,12 @@
                                                 <?php echo $_POST['price'] ?>
                                             </h3>
                                             <h3 >
-                                                <?php echo "$" . $_POST['unit'] ?>
+                                                <?php /* echo "$" . $_POST['unit'] */ ?>
+                                                <input type="number" name="unit" value="<?php echo $_POST['unit'] ?>" min="1" size="2">
                                             </h3>
                                         </div>
                                         <input type="hidden" name="title" value="<?php echo $_POST['title'] ?>">
                                         <input type="hidden" name="price" value="<?php echo $_POST['price'] ?>">
-                                        <input type="hidden" name="unit" value="<?php echo $_POST['unit'] ?>">
                                         <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
                                     </form>
                                 </div>
