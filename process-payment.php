@@ -26,7 +26,11 @@ $preference = new \MercadoPago\Preference();
 $preference->items = [
 	[
 		"title" => $_POST['title'],
-        "description" => $_POST['title'],
+
+        "description" => 'Dispositivo móvil de Tienda e-commerce',
+        "id" => "1234",
+        "picture_url" => $_POST['img'],
+
         "quantity" => (int)$_POST['unit'],
         "currency_id" => "ARS",
         "unit_price" => (float)$_POST['price'] 
@@ -48,6 +52,13 @@ $payer_phone = new stdClass();
 $payer_phone->area_code = '011';
 $payer_phone->number = '2222-3333';
 $payer->phone = $payer_phone;
+
+$payer_address = new stdClass();
+$payer_address->zip_code = '1232';
+$payer_address->street_name = 'Roque Perez';
+$payer_address->street_numebr = '123';
+
+$payer->address = $payer_address;
 
 $preference->payer = $payer;
 
