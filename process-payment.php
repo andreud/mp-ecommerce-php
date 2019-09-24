@@ -2,8 +2,12 @@
 require __DIR__  . '/vendor/autoload.php';
 //use \MercadoPago;
 
-//$dotenv = Dotenv\Dotenv::create(__DIR__);
-//$dotenv->load();
+// Usar la libreira DotEnv si hay un .env
+if( file_exists(__DIR__.'/.env') ) :
+	$dotenv = Dotenv\Dotenv::create(__DIR__);
+	$dotenv->load();
+endif;
+
 $BASE_URL = getenv('BASE_URL');
 $MP_ClientId = getenv('MERCADOPAGO_CLIENT_ID');
 $MP_ClientSecret = getenv('MERCADOPAGO_CLIENT_SECRET');
