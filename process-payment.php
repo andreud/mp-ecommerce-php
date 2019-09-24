@@ -46,9 +46,19 @@ $preference->notification_url = $BASE_URL . 'notification_url.php';
 $preference->save();
 
 if($preference->sandbox_init_point){
-	echo $preference->sandbox_init_point;
-	//header("Location: ".$preference->sandbox_init_point);
-	//die();
+	//echo $preference->sandbox_init_point;
+	
+	?>
+
+	<form action="/procesar-pago" method="POST"><!-- me devuelve a esta url despues de pago exitoso -->
+	  <script
+	   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+	   data-preference-id="<?php echo $preference->id; ?>">
+	  </script>
+	</form>
+
+	<?php
+
 } else {
 	echo '<p>No se pudo generar la url para pagar</p>';
 }
