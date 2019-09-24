@@ -7,6 +7,7 @@ if( file_exists(__DIR__ . '/.env') ) :
 	$dotenv->load();
 endif;
 
+
 $BASE_URL = getenv('BASE_URL');
 //$MP_ClientId = getenv('MERCADOPAGO_CLIENT_ID');
 //$MP_ClientSecret = getenv('MERCADOPAGO_CLIENT_SECRET');
@@ -70,11 +71,15 @@ $preference->save();
 if($preference->id){
 	//echo $preference->sandbox_init_point;
 	?>
-
-	<form action="/procesar-pago" method="POST"><!-- me devuelve a esta url despues de pago exitoso -->
+	<h1>Checkout</h1>
+	<form action="/procesar-pago.php" method="POST"><!-- me devuelve a esta url despues de pago exitoso -->
 	  <script
 	   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-	   data-preference-id="<?php echo $preference->id; ?>">
+	   data-preference-id="<?php echo $preference->id; ?>"
+	   data-button-label="Pagar la compra"
+	   data-elements-color="#2D3277" 
+	   data-header-color="#2D3277"
+	  >
 	  </script>
 	</form>
 

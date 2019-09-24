@@ -3,6 +3,7 @@
     "type": "project",
     "require": {
         "mercadopago/dx-php": "1.2.1",
-        "vlucas/phpdotenv": "^3.6"
+        "vlucas/phpdotenv": "^3.6",
+        "monolog/monolog": "^1.25"
     }
 }
