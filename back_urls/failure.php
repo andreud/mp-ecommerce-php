@@ -1,0 +1,1 @@
+<h1>Tu pago ha fallado</h1>
