@@ -4,12 +4,12 @@ require __DIR__  . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
-$BASE_URL = getenv('BASE_URL');
-$MP_ClientId = getenv('MERCADOPAGO_CLIENT_ID');
-$MP_ClientSecret = getenv('MERCADOPAGO_CLIENT_SECRET');
+$BASE_URL = $_ENV['BASE_URL'];
+$MP_ClientId = $_ENV['MERCADOPAGO_CLIENT_ID'];
+$MP_ClientSecret = $_ENV['MERCADOPAGO_CLIENT_SECRET'];
 
-$MP_PublicKey = getenv('MERCADOPAGO_PUBLIC_KEY');
-$MP_AccessToken = getenv('MERCADOPAGO_ACCESS_TOKEN');
+$MP_PublicKey = $_ENV['MERCADOPAGO_PUBLIC_KEY'];
+$MP_AccessToken = $_ENV['MERCADOPAGO_ACCESS_TOKEN'];
 
 # For API or custom checkout:
 //\MercadoPago\SDK::setAccessToken($MP_AccessToken);      // On Production
